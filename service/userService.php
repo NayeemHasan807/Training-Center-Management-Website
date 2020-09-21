@@ -15,4 +15,17 @@
 		return $user;
 	}
 
+	function changepass($userid,$newpassword){
+		$conn = dbConnection();
+
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+		$sql = "update `user` SET `password`='{$newpassword}' WHERE userid='{$userid}'";
+		$result = mysqli_query($conn, $sql);
+
+		return "done";
+	}
+
 ?>
