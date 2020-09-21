@@ -20,9 +20,10 @@
 <html>
 <head>
 	<title>Login</title>
+	<script type="text/javascript" src="../assets/js/login.js"></script>
 </head>
 <body>
-	<form action="../php/logCheck.php" method="POST">
+	<form action="../php/logCheck.php" method="POST" onsubmit="return validate()">
 		<table height="300" width="400" align="center" border="1" cellpadding="5" cellspacing="0">
 			<tr>
 				<td colspan="3" align="center">
@@ -32,18 +33,18 @@
 			<tr>
 				<td width="30%">User Id:</td>
 				<td width="50%">
-					<input type="text" name="userid">
+					<input type="text" id="userid" name="userid" onclick="click1()">
 				</td>
-				<td width="20%"></td>
+				<td id="show1"></td>
 			</tr>
 			<tr>
 				<td width="30%">Password:</td>
 				<td width="50%">
-					<input type="password" name="password">
+					<input type="password" id="password" name="password" onclick="click2()">
 					<br/>
 					<input type="checkbox" name="rememberme">Remember Me
 				</td>
-				<td width="20%"></td>
+				<td id="show2"></td>
 			</tr>
 			<tr>
 				<td colspan="3" align="right">
@@ -53,7 +54,7 @@
 						</button>
 					</a>
 					<input type="Submit" name="login" value="Login">
-					<input type="Reset" name="reset" value="Reset">
+					<input type="Reset" name="reset" value="Reset" onclick="click1(),click2()">
 				</td>
 			</tr>
 		</table>

@@ -1,7 +1,7 @@
 <?php
 
 	require_once('../php/sessionAndCookieHeader.php');
-	require_once('../service/trainerViewService.php');
+	require_once('../service/trainerProfileService.php');
 
 	if(!empty($_SESSION))
 	{
@@ -43,8 +43,8 @@
 				<td colspan="10">
 					<ul>
 						<li><a href='trainerHome.php'><font color='red'>Home</font></a></li>
-						<li><a href="viewProfileTrainer.php"><font color="red">View Profile</font></a></li>
-						<li><a href="editProfileTrainer.php"><font color="red">Edit Profile</font></a></li>
+						<li><a href="viewProfile.php"><font color="red">View Profile</font></a></li>
+						<li><a href="editProfile.php"><font color="red">Edit Profile</font></a></li>
 						<li><a href="changePassword.php"><font color="red">Change Password</font></a></li>
 						<li><a href="trainerFile.php"><font color="red">Files</font></a></li>
 						<li><a href="trainerNotice.php"><font color="red">Notices</font></a></li>
