@@ -1,5 +1,8 @@
 <?php
-    require_once('../php/sessionAndCookieHeader.php');
+
+	require_once('../php/sessionAndCookieHeader.php');
+	require_once('../service/adminNoticeService.php');
+
 	if(!empty($_SESSION))
 	{
 		if($_SESSION['usertype']!="Admin")
@@ -16,10 +19,14 @@
 	}
 ?>
 
-<!DOCKTYPE html>
-<title>user manage</title>
-<fieldset>
-    <p><h1><font color='green'>NSS Training Center</font></h1></p>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>all notice</title>
+</head>
+<body>
+	<fieldset>
+		<p><h1><font color='green'>NSS Training Center</font></h1></p>
 	<?php
 	    if(!empty($_SESSION))
 		{
@@ -48,18 +55,54 @@
 					<li><a href = "informations.php"><font color='red'>Informations</font></a></li>
 					<li><a href = "../php/logout.php"><font color='red'>Logout</font></a></li>
 				</ul>
-			</td>
-			<td>
-			    <ul>
-			    	<li><a href="adminAddAdmin.php"><font color='red'>Add Admin</font></a></li>
-			    	<li><a href="adminViewAllAdmin.php"><font color='red'>View All Admin</font></a></li>
-			    	<li><a href="adminAddTrainer.php"><font color='red'>Add Trainer</font></a></li>
-			    	<li><a href="adminViewAllTrainer.php"><font color='red'>View All Trainer</font></a></li>
-			    	<li><a href="adminAddStudent.php"><font color='red'>Add Student</font></a></li>
-			    	<li><a href="adminViewAllStudent.php"><font color='red'>View All Student</font></a></li>
-			    	<li><a href="adminHome.php"><font color='red'>Back</font></a></li>
-			    </ul>
-			</td>
-		</tr>
-	</table>
-</fieldset>
+				</td>
+				<td align="Center">
+					<table border="1" width="100%" cellspacing="0" cellpadding="5">
+						<tr>
+							<td>Notice Subject</td>
+							<td>Notice Body</td>
+							<td>Action</td>
+						</tr>
+
+						<?php
+							if (!empty($_SESSION['userid'])) 
+							{
+								$userid = $_SESSION['userid'];
+							} 
+							else
+							{
+								$userid = $_COOKIE['userid'];
+							}
+						?>
+						<?php
+							$notices = getallnoticebyuserid($userid);
+							for ($i=0; $i != count($notices); $i++)
+							{
+						?>
+						<tr>
+							<td><?=$notices[$i]['noticesubject']?></td>
+							<td><?=$notices[$i]['noticebody']?></td>
+							<td>
+								<a href="adminDeleteNotice.php?id=<?=$notices[$i]['id']?>">Delete</a> 
+							</td>
+						</tr>
+
+						<?php 
+							} 
+						?>
+						<tr>
+							<td colspan="3" align="left">
+								<a href="adminNotice.php">
+									<button type="button">
+										Back
+									</button>
+								</a>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</fieldset>
+</body>
+</html>

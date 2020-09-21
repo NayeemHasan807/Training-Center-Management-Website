@@ -41,6 +41,7 @@
 					<li><a href = "changePassword.php"><font color='red'>Change Password</font></a></li>
 					<li><a href = "userManage.php"><font color='red'>Manage Users</font></a></li>
 					<li><a href = "courseManage.php"><font color='red'>Manage Courses</font></a></li>
+					<li><a href = "adminMail.php"><font color='red'>Mail</font></a></li>
 					<li><a href = "adminNotice.php"><font color='red'>Notice</font></a></li>
 					<li><a href = "adminForms.php"><font color='red'>Forms</font></a></li>
 					<li><a href = "financeManage.php"><font color='red'>Finance</font></a></li>
@@ -52,7 +53,7 @@
 			    <ul>
 			    	<li><a href="adminAddCourse.php"><font color='red'>Add Course</font></a></li>
 			    	<li><a href="adminViewAllCourse.php"><font color='red'>View All Course</font></a></li>
-			    	<li><a href="adminDeleteCourse.php"><font color='red'>Delete Course</font></a></li>
+			    	<li><a href="adminHome.php"><font color='red'>Back</font></a></li>
 			    </ul>
 			</td>
 		</tr>

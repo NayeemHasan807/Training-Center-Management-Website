@@ -1,8 +1,11 @@
 <?php
-    require_once('../php/sessionAndCookieHeader.php');
+
+	require_once('../php/sessionAndCookieHeader.php');
+	require_once('../service/adminNoticeService.php');
+
 	if(!empty($_SESSION))
 	{
-		if($_SESSION['usertype']!="Admin")
+		if($_SESSION['usertype']!="")
 		{
 			header('location:../php/logout.php');
 		}
@@ -14,13 +17,23 @@
 			header('location:../php/logout.php');
 		}
 	}
+
+	if (isset($_GET['id'])) {
+		$notice = getnoticebyid($_GET['id']);	
+	}else{
+		header('location:adminViewAllNotice.php');
+	}
 ?>
 
-<!DOCKTYPE html>
-<title>user manage</title>
-<fieldset>
-    <p><h1><font color='green'>NSS Training Center</font></h1></p>
-	<?php
+<!DOCTYPE html>
+<html>
+<head>
+	<title>delete notice</title>
+</head>
+<body>
+	<fieldset>
+		<p><h1><font color='green'>NSS Training Center</font></h1></p>
+		<?php
 	    if(!empty($_SESSION))
 		{
 			echo "<p align='right'><font color='black'> Logged in as </font><a href='viewProfileAdmin.php'><font color='red'>".$_SESSION['userid']."</font></a>|<a href = '../php/logout.php'><font color='red'>Logout</font></a></p>";
@@ -48,18 +61,20 @@
 					<li><a href = "informations.php"><font color='red'>Informations</font></a></li>
 					<li><a href = "../php/logout.php"><font color='red'>Logout</font></a></li>
 				</ul>
-			</td>
-			<td>
-			    <ul>
-			    	<li><a href="adminAddAdmin.php"><font color='red'>Add Admin</font></a></li>
-			    	<li><a href="adminViewAllAdmin.php"><font color='red'>View All Admin</font></a></li>
-			    	<li><a href="adminAddTrainer.php"><font color='red'>Add Trainer</font></a></li>
-			    	<li><a href="adminViewAllTrainer.php"><font color='red'>View All Trainer</font></a></li>
-			    	<li><a href="adminAddStudent.php"><font color='red'>Add Student</font></a></li>
-			    	<li><a href="adminViewAllStudent.php"><font color='red'>View All Student</font></a></li>
-			    	<li><a href="adminHome.php"><font color='red'>Back</font></a></li>
-			    </ul>
-			</td>
-		</tr>
-	</table>
-</fieldset>
+				</td>
+				<td align="Center">
+					<form action="../php/AdminNoticeController.php" method="post">
+						<fieldset>
+							<legend>Confirmation</legend>
+								Press Yes to delete this user and press No to go back <br/>
+								<input type="hidden" name="id" value="<?=$notice['id']?>">
+								<input type="submit" name="yes" value="yes">
+								<input type="submit" name="no" value="no">
+						</fieldset>
+					</form>
+				</td>
+			</tr>
+		</table>
+	</fieldset>
+</body>
+</html>

@@ -41,6 +41,7 @@
 					<li><a href = "changePassword.php"><font color='red'>Change Password</font></a></li>
 					<li><a href = "userManage.php"><font color='red'>Manage Users</font></a></li>
 					<li><a href = "courseManage.php"><font color='red'>Manage Courses</font></a></li>
+					<li><a href = "adminMail.php"><font color='red'>Mail</font></a></li>
 					<li><a href = "adminNotice.php"><font color='red'>Notice</font></a></li>
 					<li><a href = "adminForms.php"><font color='red'>Forms</font></a></li>
 					<li><a href = "financeManage.php"><font color='red'>Finance</font></a></li>

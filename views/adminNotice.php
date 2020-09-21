@@ -17,7 +17,7 @@
 ?>
 
 <!DOCKTYPE html>
-<title>user manage</title>
+<title>notice manage</title>
 <fieldset>
     <p><h1><font color='green'>NSS Training Center</font></h1></p>
 	<?php
@@ -51,12 +51,8 @@
 			</td>
 			<td>
 			    <ul>
-			    	<li><a href="adminAddAdmin.php"><font color='red'>Add Admin</font></a></li>
-			    	<li><a href="adminViewAllAdmin.php"><font color='red'>View All Admin</font></a></li>
-			    	<li><a href="adminAddTrainer.php"><font color='red'>Add Trainer</font></a></li>
-			    	<li><a href="adminViewAllTrainer.php"><font color='red'>View All Trainer</font></a></li>
-			    	<li><a href="adminAddStudent.php"><font color='red'>Add Student</font></a></li>
-			    	<li><a href="adminViewAllStudent.php"><font color='red'>View All Student</font></a></li>
+			    	<li><a href="adminAddNotice.php"><font color='red'>Add Notice</font></a></li>
+			    	<li><a href="adminViewAllNotice.php"><font color='red'>View All Notice</font></a></li>
 			    	<li><a href="adminHome.php"><font color='red'>Back</font></a></li>
 			    </ul>
 			</td>

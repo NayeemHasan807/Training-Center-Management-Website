@@ -1,5 +1,6 @@
 <?php
-    require_once('../php/sessionAndCookieHeader.php');
+	require_once('../php/sessionAndCookieHeader.php');
+	
 	if(!empty($_SESSION))
 	{
 		if($_SESSION['usertype']!="Admin")
@@ -14,10 +15,22 @@
 			header('location:../php/logout.php');
 		}
 	}
+
+	if (isset($_GET['error'])) {
+		
+		if($_GET['error'] == 'db_error'){
+			echo "Something went wrong...please try again";
+		}
+	}
+
+
 ?>
 
-<!DOCKTYPE html>
-<title>user manage</title>
+<!DOCTYPE html>
+<head>
+	<title>add notice</title>
+	<script type="text/javascript" src="../assets/js/adminAddNotice.js"></script>
+</head>
 <fieldset>
     <p><h1><font color='green'>NSS Training Center</font></h1></p>
 	<?php
@@ -50,15 +63,36 @@
 				</ul>
 			</td>
 			<td>
-			    <ul>
-			    	<li><a href="adminAddAdmin.php"><font color='red'>Add Admin</font></a></li>
-			    	<li><a href="adminViewAllAdmin.php"><font color='red'>View All Admin</font></a></li>
-			    	<li><a href="adminAddTrainer.php"><font color='red'>Add Trainer</font></a></li>
-			    	<li><a href="adminViewAllTrainer.php"><font color='red'>View All Trainer</font></a></li>
-			    	<li><a href="adminAddStudent.php"><font color='red'>Add Student</font></a></li>
-			    	<li><a href="adminViewAllStudent.php"><font color='red'>View All Student</font></a></li>
-			    	<li><a href="adminHome.php"><font color='red'>Back</font></a></li>
-			    </ul>
+			    <fieldset>
+			    	<form>
+						<legend><b>CREATE NEW NOTICE</b></legend>
+						<table>
+							<tr>
+								<td>Notice Subject</td>
+								<td><input type="text" id="noticesubject" name="noticesubject" onclick ="check1()"></td>
+								<td id="show1"></td>
+							</tr>
+							<tr>
+								<td>Notice Body</td>
+								<td><textarea rows="5" cols="40" id="noticebody" name="noticebody" onclick ="check2()"></textarea></td>
+								<td id="show2"></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<a href="adminNotice.php">
+										<button type="button">
+											Back
+										</button>
+									</a>
+									<input type="button" id="addnotice" name="addnotice" value="Send" onclick="validate()">
+									<input type="reset" id="reset" name="reset" onclick="check1(),check2(),check3()">
+								</td>
+								<td id="show3"></td>
+							</tr>
+						</table>
+					</form>
+				</fieldset>
 			</td>
 		</tr>
 	</table>
