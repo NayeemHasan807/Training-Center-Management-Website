@@ -1,7 +1,6 @@
 <?php
 
 	require_once('../php/sessionAndCookieHeader.php');
-	require_once('../service/trainerProfileService.php');
 
 	if(!empty($_SESSION))
 	{
@@ -22,7 +21,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>View Profile</title>
+	<title>Trainer Notice</title>
 </head>
 <body>
 	<fieldset>
@@ -56,71 +55,11 @@
 					</ul>
 				</td>
 				<td>
-					<table cellpadding="10" cellspacing="0" border="0">
-						<?php
-							if (!empty($_SESSION['userid'])) 
-							{
-								$userid = $_SESSION['userid'];
-							} 
-							else
-							{
-								$userid = $_COOKIE['userid'];
-							}
-						?>
-						<?php
-							$details = gettrainerdetails($userid);
-						?>
-						<tr>
-							<td>Trainer Id</td>
-							<td>:</td>
-							<td><?=$details['trainerid']?></td>
-						</tr>
-						<tr>
-							<td>Trainer Name</td>
-							<td>:</td>
-							<td><?=$details['name']?></td>
-						</tr>
-						<tr>
-							<td>Email</td>
-							<td>:</td>
-							<td><?=$details['email']?></td>
-						</tr>
-						<tr>
-							<td>Gender</td>
-							<td>:</td>
-							<td><?=$details['gender']?></td>
-						</tr>
-						<tr>
-							<td>Date Of Birth</td>
-							<td>:</td>
-							<td><?=$details['dob']?></td>
-						</tr>
-						<tr>
-							<td>Phone No</td>
-							<td>:</td>
-							<td><?=$details['phoneno']?></td>
-						</tr>
-						<tr>
-							<td>Address</td>
-							<td>:</td>
-							<td><?=$details['address']?></td>
-						</tr>
-						<tr>
-							<td>Qualification</td>
-							<td>:</td>
-							<td><?=$details['eduqualification']?></td>
-						</tr>
-						<tr>
-							<td colspan="4" align="left">
-								<a href="trainerHome.php">
-									<button type="button">
-										Back
-									</button>
-								</a>
-							</td>
-						</tr>
-					</table>
-					<hr/>
+					<ul>
+						<li><a href="trainerAddNotice.php"><font color='red'>Add Notice</font></a></li>
+						<li><a href="trainerViewNotice.php"><font color='red'>View All Notice</font></a></li>
+						<li><a href='trainerHome.php'><font color='red'>Back</font></a></li>
+					</ul>
 				</td>
 			</tr>
 		</table>

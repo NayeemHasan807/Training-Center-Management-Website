@@ -1,7 +1,6 @@
 <?php
 
 	require_once('../php/sessionAndCookieHeader.php');
-	require_once('../service/trainerProfileService.php');
 
 	if(!empty($_SESSION))
 	{
@@ -17,12 +16,23 @@
 			header('location:../php/logout.php');
 		}
 	}
+
+	// if (isset($_GET['error'])) {
+		
+	// 	if($_GET['error'] == 'db_error'){
+	// 		echo "Something went wrong...please try again";
+	// 	}
+	// 	elseif ($_GET['error'] == 'null_error') {
+	// 		echo "null submission...please try again";
+	// 	}
+	// }
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>View Profile</title>
+	<title>Trainer Add Notice</title>
+	<script type="text/javascript" src="../assets/js/trainerAddNotice.js"></script>
 </head>
 <body>
 	<fieldset>
@@ -56,71 +66,22 @@
 					</ul>
 				</td>
 				<td>
-					<table cellpadding="10" cellspacing="0" border="0">
-						<?php
-							if (!empty($_SESSION['userid'])) 
-							{
-								$userid = $_SESSION['userid'];
-							} 
-							else
-							{
-								$userid = $_COOKIE['userid'];
-							}
-						?>
-						<?php
-							$details = gettrainerdetails($userid);
-						?>
-						<tr>
-							<td>Trainer Id</td>
-							<td>:</td>
-							<td><?=$details['trainerid']?></td>
-						</tr>
-						<tr>
-							<td>Trainer Name</td>
-							<td>:</td>
-							<td><?=$details['name']?></td>
-						</tr>
-						<tr>
-							<td>Email</td>
-							<td>:</td>
-							<td><?=$details['email']?></td>
-						</tr>
-						<tr>
-							<td>Gender</td>
-							<td>:</td>
-							<td><?=$details['gender']?></td>
-						</tr>
-						<tr>
-							<td>Date Of Birth</td>
-							<td>:</td>
-							<td><?=$details['dob']?></td>
-						</tr>
-						<tr>
-							<td>Phone No</td>
-							<td>:</td>
-							<td><?=$details['phoneno']?></td>
-						</tr>
-						<tr>
-							<td>Address</td>
-							<td>:</td>
-							<td><?=$details['address']?></td>
-						</tr>
-						<tr>
-							<td>Qualification</td>
-							<td>:</td>
-							<td><?=$details['eduqualification']?></td>
-						</tr>
-						<tr>
-							<td colspan="4" align="left">
-								<a href="trainerHome.php">
-									<button type="button">
-										Back
-									</button>
-								</a>
-							</td>
-						</tr>
-					</table>
-					<hr/>
+					<form id="myform">
+						Subject:<br/>
+						<input type="text" id="noticesubject" name="noticesubject" onclick ="click1()"><br/>
+						<div id="show1"></div>
+						Body:<br/>
+						<textarea rows="5" cols="80" id="noticebody" name="noticebody" onclick ="click2()"></textarea><br/>
+						<div id="show2"></div>
+						<a href="trainerNotice.php">
+							<button type="button">
+								Back
+							</button>
+						</a>
+						<input type="button" id="addnotice" name="addnotice" value="Send" onclick="validate()">
+						<input type="reset" id="reset" name="reset" onclick="click1(),click2(),click3()">
+						<div id="output"></div>
+					</form>
 				</td>
 			</tr>
 		</table>

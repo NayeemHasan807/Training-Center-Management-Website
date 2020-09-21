@@ -1,7 +1,7 @@
 <?php
 
 	require_once('../php/sessionAndCookieHeader.php');
-	require_once('../service/trainerProfileService.php');
+	require_once('../service/trainerNoticeService.php');
 
 	if(!empty($_SESSION))
 	{
@@ -17,12 +17,18 @@
 			header('location:../php/logout.php');
 		}
 	}
+
+	if (isset($_GET['id'])) {
+		$notice = getnoticebyid($_GET['id']);	
+	}else{
+		header('location: trainerViewNotice.php');
+	}
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>View Profile</title>
+	<title>Trainer Delete Notice</title>
 </head>
 <body>
 	<fieldset>
@@ -55,72 +61,16 @@
 						<li><a href="../php/logout.php"><font color="red">Logout</font></a></li>
 					</ul>
 				</td>
-				<td>
-					<table cellpadding="10" cellspacing="0" border="0">
-						<?php
-							if (!empty($_SESSION['userid'])) 
-							{
-								$userid = $_SESSION['userid'];
-							} 
-							else
-							{
-								$userid = $_COOKIE['userid'];
-							}
-						?>
-						<?php
-							$details = gettrainerdetails($userid);
-						?>
-						<tr>
-							<td>Trainer Id</td>
-							<td>:</td>
-							<td><?=$details['trainerid']?></td>
-						</tr>
-						<tr>
-							<td>Trainer Name</td>
-							<td>:</td>
-							<td><?=$details['name']?></td>
-						</tr>
-						<tr>
-							<td>Email</td>
-							<td>:</td>
-							<td><?=$details['email']?></td>
-						</tr>
-						<tr>
-							<td>Gender</td>
-							<td>:</td>
-							<td><?=$details['gender']?></td>
-						</tr>
-						<tr>
-							<td>Date Of Birth</td>
-							<td>:</td>
-							<td><?=$details['dob']?></td>
-						</tr>
-						<tr>
-							<td>Phone No</td>
-							<td>:</td>
-							<td><?=$details['phoneno']?></td>
-						</tr>
-						<tr>
-							<td>Address</td>
-							<td>:</td>
-							<td><?=$details['address']?></td>
-						</tr>
-						<tr>
-							<td>Qualification</td>
-							<td>:</td>
-							<td><?=$details['eduqualification']?></td>
-						</tr>
-						<tr>
-							<td colspan="4" align="left">
-								<a href="trainerHome.php">
-									<button type="button">
-										Back
-									</button>
-								</a>
-							</td>
-						</tr>
-					</table>
-					<hr/>
+				<td align="Center">
+					<form action="../php/trainerNoticeController.php" method="post">
+						<fieldset>
+							<legend>Confirmation</legend>
+								Press Yes to delete this user and press No to go back <br/>
+								<input type="hidden" name="id" value="<?=$notice['id']?>">
+								<input type="submit" name="yes" value="yes">
+								<input type="submit" name="no" value="no">
+						</fieldset>
+					</form>
 				</td>
 			</tr>
 		</table>

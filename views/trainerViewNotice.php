@@ -1,7 +1,7 @@
 <?php
 
 	require_once('../php/sessionAndCookieHeader.php');
-	require_once('../service/trainerProfileService.php');
+	require_once('../service/trainerNoticeService.php');
 
 	if(!empty($_SESSION))
 	{
@@ -22,7 +22,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>View Profile</title>
+	<title>View All Notice</title>
 </head>
 <body>
 	<fieldset>
@@ -55,8 +55,14 @@
 						<li><a href="../php/logout.php"><font color="red">Logout</font></a></li>
 					</ul>
 				</td>
-				<td>
-					<table cellpadding="10" cellspacing="0" border="0">
+				<td align="Center">
+					<table border="1" width="100%" cellspacing="0" cellpadding="5">
+						<tr>
+							<td>Notice Subject</td>
+							<td>Notice Body</td>
+							<td>Action</td>
+						</tr>
+
 						<?php
 							if (!empty($_SESSION['userid'])) 
 							{
@@ -68,51 +74,25 @@
 							}
 						?>
 						<?php
-							$details = gettrainerdetails($userid);
+							$notices = getallnoticebyuserid($userid);
+							for ($i=0; $i != count($notices); $i++)
+							{
 						?>
 						<tr>
-							<td>Trainer Id</td>
-							<td>:</td>
-							<td><?=$details['trainerid']?></td>
+							<td><?=$notices[$i]['noticesubject']?></td>
+							<td><?=$notices[$i]['noticebody']?></td>
+							<td>
+								<a href="trainerEditNotice.php?id=<?=$notices[$i]['id']?>">Edit</a> |
+								<a href="trainerDeleteNotice.php?id=<?=$notices[$i]['id']?>">Delete</a> 
+							</td>
 						</tr>
+
+						<?php 
+							} 
+						?>
 						<tr>
-							<td>Trainer Name</td>
-							<td>:</td>
-							<td><?=$details['name']?></td>
-						</tr>
-						<tr>
-							<td>Email</td>
-							<td>:</td>
-							<td><?=$details['email']?></td>
-						</tr>
-						<tr>
-							<td>Gender</td>
-							<td>:</td>
-							<td><?=$details['gender']?></td>
-						</tr>
-						<tr>
-							<td>Date Of Birth</td>
-							<td>:</td>
-							<td><?=$details['dob']?></td>
-						</tr>
-						<tr>
-							<td>Phone No</td>
-							<td>:</td>
-							<td><?=$details['phoneno']?></td>
-						</tr>
-						<tr>
-							<td>Address</td>
-							<td>:</td>
-							<td><?=$details['address']?></td>
-						</tr>
-						<tr>
-							<td>Qualification</td>
-							<td>:</td>
-							<td><?=$details['eduqualification']?></td>
-						</tr>
-						<tr>
-							<td colspan="4" align="left">
-								<a href="trainerHome.php">
+							<td colspan="3" align="left">
+								<a href="trainerNotice.php">
 									<button type="button">
 										Back
 									</button>
@@ -120,7 +100,6 @@
 							</td>
 						</tr>
 					</table>
-					<hr/>
 				</td>
 			</tr>
 		</table>
