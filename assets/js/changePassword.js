@@ -50,10 +50,6 @@ function validate()
 			show3.innerHTML="New password and retype new password must need to be same!";
 		}
 	}
-	// alert(sid);
-	// alert(cn);
-	// alert(m);
-	// alert(match);
 	if (sid==true & cn==true & m==true & match==true) 
 	{
 		var data = {

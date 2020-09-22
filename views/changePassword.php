@@ -24,10 +24,10 @@
 		<?php
 			if(!empty($_SESSION))
 			{
-				echo "<p align='right'><font color='black'>Logged in as </font><font color='red'>".$_SESSION['userid']."</font></a> | <a href='../php/logout.php'><font color='red'>Logout</font></a></p>";
+				echo "<p align='right'><font color='black'>Logged in as </font><a href='viewProfileStudent.php'><font color='red'>".$_SESSION['userid']."</font></a> | <a href='../php/logout.php'><font color='red'>Logout</font></a></p>";
 			}
 			else
-				echo "<p align='right'><font color='black'>Logged in as </font><font color='red'>".$_COOKIE['userid']."</font></a> | <a href='../php/logout.php'><font color='red'>Logout</font></a></p>";
+				echo "<p align='right'><font color='black'>Logged in as </font><a href='viewProfileStudent.php'><font color='red'>".$_COOKIE['userid']."</font></a> | <a href='../php/logout.php'><font color='red'>Logout</font></a></p>";
 		?>
 	</fieldset>
 	<fieldset>
@@ -41,16 +41,16 @@
 								if($_SESSION['usertype']=="Trainer")
 								{
 									echo "<li><a href='trainerHome.php'><font color='red'>Home</font></a></li>";
-									echo "<li><a href='viewProfileTrainer.php'><font color='red'>View Profile</font></a></li>";
-									echo "<li><a href='editProfileTrainer.php'><font color='red'>Edit Profile</font></a></li>";
+									echo "<li><a href='viewProfileStudent.php'><font color='red'>View Profile</font></a></li>";
+									echo "<li><a href='editProfileStudent.php'><font color='red'>Edit Profile</font></a></li>";
 									echo "<li><a href='changePassword.php'><font color='red'>Change Password</font></a></li>";
 									echo "<li><a href='trainerFile.php'><font color='red'>Files</font></a></li>";
 									echo "<li><a href='trainerNotice.php'><font color='red'>Notices</font></a></li>";
 									echo "<li><a href='studentMarks.php'><font color='red'>Student Marks</font></a></li>";
 									echo "<li><a href='trainerMail.php'><font color='red'>Send Mail</font></a></li>";
 									echo "<li><a href='trainerAssignment.php'><font color='red'>Assignments</font></a></li>";
-									echo "<li><a href='trainerViewClasstime.php'><font color='red'>Class Times</font></a></li>";
-									echo "<li><a href='trainerAttendance.php'><font color='red'>Attendence</font></a></li>";
+									echo "<li><a href='trainerViewClasstime.php'><font color='red'>View Class Times</font></a></li>";
+									echo "<li><a href='trainerAttendance.php'><font color='red'>Upload Attendance</font></a></li>";
 									echo "<li><a href='../php/logout.php'><font color='red'>Logout</font></a></li>";
 
 								}
@@ -70,16 +70,16 @@
 								if($_COOKIE['usertype']=="Trainer")
 								{
 									echo "<li><a href='trainerHome.php'><font color='red'>Home</font></a></li>";
-									echo "<li><a href='viewProfileTrainer.php'><font color='red'>View Profile</font></a></li>";
-									echo "<li><a href='editProfileTrainer.php'><font color='red'>Edit Profile</font></a></li>";
+									echo "<li><a href='viewProfileStudent.php'><font color='red'>View Profile</font></a></li>";
+									echo "<li><a href='editProfileStudent.php'><font color='red'>Edit Profile</font></a></li>";
 									echo "<li><a href='changePassword.php'><font color='red'>Change Password</font></a></li>";
 									echo "<li><a href='trainerFile.php'><font color='red'>Files</font></a></li>";
 									echo "<li><a href='trainerNotice.php'><font color='red'>Notices</font></a></li>";
-									echo "<li><a href='studentMarks.php'><font color='red'>Student Marks</font></a></li>";
+									echo "<li><a href='StudentMarks.php'><font color='red'>Student Marks</font></a></li>";
 									echo "<li><a href='trainerMail.php'><font color='red'>Send Mail</font></a></li>";
 									echo "<li><a href='trainerAssignment.php'><font color='red'>Assignments</font></a></li>";
-									echo "<li><a href='trainerViewClasstime.php'><font color='red'>Class Times</font></a></li>";
-									echo "<li><a href='trainerAttendance.php'><font color='red'>Attendence</font></a></li>";
+									echo "<li><a href='ClassTimes.php'><font color='red'>Class Times</font></a></li>";
+									echo "<li><a href='Attendence.php'><font color='red'>Attendence</font></a></li>";
 									echo "<li><a href='../php/logout.php'><font color='red'>Logout</font></a></li>";
 								}
 								elseif($_COOKIE['usertype']=="Student")
