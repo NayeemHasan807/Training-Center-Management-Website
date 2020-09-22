@@ -1,7 +1,8 @@
 function validate()
 {
 	var show1 = document.getElementById("show1");
-	var towhom = document.getElementById("towhom").value; var sid=false;
+	var towhom = document.getElementById("towhom").value; 
+	var sid=false;
 	var show2 = document.getElementById("show2");
 	var subject = document.getElementById("subject").value;
 	var cn=false;
