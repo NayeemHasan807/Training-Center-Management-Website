@@ -30,30 +30,23 @@
 			$count = count($check);
 			if ($count != 0) 
 			{
-				if($check['0']['trainerid']!=$userid)
-				{
-					$count = getallmailcount();
-					$savemail = [
-						'id' => $count+1,
-						'userid' => $userid,
-						'towhom' => $towhom,
-						'subject' => $subject,
-						'body' => $body
-					];
+				$count = getallmailcount();
+				$savemail = [
+					'id' => $count+1,
+					'userid' => $userid,
+					'towhom' => $towhom,
+					'subject' => $subject,
+					'body' => $body
+				];
 
-					$status = insertmail($savemail);
-					if($status)
-					{
-						echo "mail send";
-					}
-					else
-					{
-						echo "database error";
-					}
+				$status = insertmail($savemail);
+				if($status)
+				{
+					echo "mail send";
 				}
 				else
 				{
-					echo "you cant send mail to yourself";
+					echo "database error";
 				}
 			}
 			else

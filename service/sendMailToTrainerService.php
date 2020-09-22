@@ -18,7 +18,7 @@
 		{
 			array_push($info, $row);
 		}
-		return count($info);
+		return $info;
     }
 
     function getallmailcount()
