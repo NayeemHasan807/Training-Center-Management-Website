@@ -25,6 +25,7 @@
 <html>
 <head>
 	<title>Own Information</title>
+	<link rel="stylesheet" type="text/css" href="../assets/css/studentStyle.css">
 </head> 
 <body>
 	<fieldset>
@@ -32,10 +33,10 @@
 		<?php
 			if(!empty($_SESSION))
 			{
-				echo "<p align='right'><font color='black'>Logged in as </font><a href='viewProfileStudent.php'><font color='red'>".$_SESSION['userid']."</font></a> | <a href='../php/logout.php'><font color='red'>Logout</font></a></p>";
+				echo "<p align='right'><font color='black'>Logged in as </font><a href='viewProfileStudent.php'><font >".$_SESSION['userid']."</font></a> | <a href='../php/logout.php'><font >Logout</font></a></p>";
 			}
 			else
-				echo "<p align='right'><font color='black'>Logged in as </font><a href='viewProfileStudent.php'><font color='red'>".$_COOKIE['userid']."</font></a> | <a href='../php/logout.php'><font color='red'>Logout</font></a></p>";
+				echo "<p align='right'><font color='black'>Logged in as </font><a href='viewProfileStudent.php'><font >".$_COOKIE['userid']."</font></a> | <a href='../php/logout.php'><font >Logout</font></a></p>";
 		?>
 	</fieldset>
 	<fieldset>
