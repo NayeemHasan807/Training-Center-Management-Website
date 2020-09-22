@@ -23,6 +23,7 @@
 <html>
 <head>
 	<title>all finance</title>
+	<link rel="stylesheet" type="text/css" href="../assets/css/adminStyle.css">
 </head>
 <body>
 	<fieldset>

@@ -17,7 +17,11 @@
 ?>
 
 <!DOCKTYPE html>
-<title>notice manage</title>
+<head>
+	<title>notice manage</title>
+	<link rel="stylesheet" type="text/css" href="../assets/css/adminStyle.css">
+</head>
+
 <fieldset>
     <p><h1><font color='green'>NSS Training Center</font></h1></p>
 	<?php

@@ -17,7 +17,10 @@
 ?>
 
 <!DOCKTYPE html>
-<title>adminhome</title>
+<HEAD>
+	<title>adminhome</title>
+	<link rel="stylesheet" type="text/css" href="../assets/css/adminStyle.css">
+</HEAD>
 <fieldset>
     <p><h1><font color='green'>NSS Training Center</font></h1></p>
 	<?php

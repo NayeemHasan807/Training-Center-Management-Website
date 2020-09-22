@@ -29,6 +29,7 @@
 <html>
 <head>
 	<title>delete notice</title>
+	<link rel="stylesheet" type="text/css" href="../assets/css/adminStyle.css">
 </head>
 <body>
 	<fieldset>
@@ -63,7 +64,7 @@
 				</ul>
 				</td>
 				<td align="Center">
-					<form action="../php/AdminNoticeController.php" method="post">
+					<form action="../php/adminNoticeController.php" method="post">
 						<fieldset>
 							<legend>Confirmation</legend>
 								Press Yes to delete this user and press No to go back <br/>

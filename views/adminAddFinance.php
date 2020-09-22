@@ -30,6 +30,7 @@
 <head>
 	<title>add finance</title>
 	<script type="text/javascript" src="../assets/js/adminAddFinance.js"></script>
+	<link rel="stylesheet" type="text/css" href="../assets/css/adminStyle.css">
 </head>
 <fieldset>
     <p><h1><font color='green'>NSS Training Center</font></h1></p>
