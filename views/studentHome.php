@@ -22,6 +22,7 @@
 <html>
 <head>
 	<title>Student Home</title>
+	<link rel="stylesheet" type="text/css" href="../assets/css/studentStyle.css">
 </head>
 <body>
 	<fieldset>
@@ -29,10 +30,10 @@
 		<?php
 			if(!empty($_SESSION))
 			{
-				echo "<p align='right'><font color='black'>Logged in as </font><a href='viewProfileStudent.php'><font color='red'>".$_SESSION['userid']."</font></a> | <a href='../php/logout.php'><font color='red'>Logout</font></a></p>";
+				echo "<p align='right'><font color='black'>Logged in as </font><a href='viewProfileStudent.php'><font >".$_SESSION['userid']."</font></a> | <a href='../php/logout.php'><font >Logout</font></a></p>";
 			}
 			else
-				echo "<p align='right'><font color='black'>Logged in as </font><a href='viewProfileStudent.php'><font color='red'>".$_COOKIE['userid']."</font></a> | <a href='../php/logout.php'><font color='red'>Logout</font></a></p>";
+				echo "<p align='right'><font color='black'>Logged in as </font><a href='viewProfileStudent.php'><font >".$_COOKIE['userid']."</font></a> | <a href='../php/logout.php'><font >Logout</font></a></p>";
 		?>
 	</fieldset>
 	<fieldset>
@@ -40,23 +41,23 @@
 			<tr>
 				<td colspan="10">
 					<ul>
-						<li><a href='studentHome.php'><font color='red'>Home</font></a></li>
-						<li><a href="viewProfileStudent.php"><font color="red">View Profile</font></a></li>
-					    <li><a href="editProfileStudent.php"><font color="red">Edit Profile</font></a></li>
-					    <li><a href="changePassword.php"><font color="red">Change Password</font></a></li>
-					    <li><a href="trainerdetails.php"><font color="red">All Trainer Details</font></a></li>
-					    <li><a href="classroutinetime.php"><font color="red">Class Routine Time</font></a></li>
-					    <li><a href="classdetails.php"><font color="red">Class Details</font></a></li>
-						<li><a href="allcourses.php"><font color="red">All Courses</font></a></li>
-						<li><a href="studentAssignmentHome.php"><font color="red">Assignment</font></a></li>
-						<li><a href="marks.php"><font color="red">Marks</font></a></li>
-						<li><a href="downloadform.php"><font color="red">Download Form</font></a></li>
-						<li><a href="sendMailToTrainer.php"><font color="red">Send Mail To Trainer</font></a></li>
-						<li><a href="sendMailToPeer.php"><font color="red">Send mail To Peers</font></a></li>
-						<li><a href="studentViewNotice.php"><font color="red">Notice</font></a></li>
-						<li><a href="applyForJobHome.php"><font color="red">Apply For Job</font></a></li>
-						<li><a href="ownInformation.php"><font color="red">Own Information</font></a></li>
-						<li><a href="../php/logout.php"><font color="red">Logout</font></a></li>
+						<li><a href='studentHome.php'><font >Home</font></a></li>
+						<li><a href="viewProfileStudent.php"><font >View Profile</font></a></li>
+					    <li><a href="editProfileStudent.php"><font >Edit Profile</font></a></li>
+					    <li><a href="changePassword.php"><font >Change Password</font></a></li>
+					    <li><a href="trainerdetails.php"><font >All Trainer Details</font></a></li>
+					    <li><a href="classroutinetime.php"><font >Class Routine Time</font></a></li>
+					    <li><a href="classdetails.php"><font >Class Details</font></a></li>
+						<li><a href="allcourses.php"><font >All Courses</font></a></li>
+						<li><a href="studentAssignmentHome.php"><font >Assignment</font></a></li>
+						<li><a href="marks.php"><font >Marks</font></a></li>
+						<li><a href="downloadform.php"><font >Download Form</font></a></li>
+						<li><a href="sendMailToTrainer.php"><font >Send Mail To Trainer</font></a></li>
+						<li><a href="sendMailToPeer.php"><font >Send mail To Peers</font></a></li>
+						<li><a href="studentViewNotice.php"><font >Notice</font></a></li>
+						<li><a href="applyForJobHome.php"><font >Apply For Job</font></a></li>
+						<li><a href="ownInformation.php"><font >Own Information</font></a></li>
+						<li><a href="../php/logout.php"><font >Logout</font></a></li>
 					</ul>
 				</td>
 				<td>

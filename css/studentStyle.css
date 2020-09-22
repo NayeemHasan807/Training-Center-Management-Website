@@ -1,0 +1,82 @@
+font {
+	color:blue;
+}
+
+table {
+	text-align: left;
+}
+
+button {
+	width: 100%;
+	background-color: blue;
+	color: white;
+	padding: 7px 7px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type=text], select {
+	width: 100%;
+	padding: 12px 7px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+input[type=password], select {
+	width: 100%;
+	padding: 12px 7px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+textarea {
+	width: 100%;
+	padding: 12px 7px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+input[type=submit] {
+	width: 100%;
+	background-color: blue;
+	color: white;
+	padding: 7px 7px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+input[type=button] {
+	width: 100%;
+	background-color: blue;
+	color: white;
+	padding: 7px 7px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+input[type=reset] {
+	width: 100%;
+	background-color: blue;
+	color: white;
+	padding: 7px 7px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: lightblue;
+}
