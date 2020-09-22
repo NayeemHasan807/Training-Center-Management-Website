@@ -21,6 +21,7 @@
 <head>
 	<title>Login</title>
 	<script type="text/javascript" src="../assets/js/login.js"></script>
+	<link rel="stylesheet" type="text/css" href="../assets/css/trainerStyle.css">
 </head>
 <body>
 	<form action="../php/logCheck.php" method="POST" onsubmit="return validate()">
