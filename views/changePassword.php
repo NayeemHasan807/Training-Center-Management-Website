@@ -17,6 +17,7 @@
 <head>
 	<title>Change Password</title>
 	<script type="text/javascript" src="../assets/js/changePassword.js"></script>
+	<link rel="stylesheet" type="text/css" href="../assets/css/adminStyle.css">
 </head>
 <body>
 	<fieldset>

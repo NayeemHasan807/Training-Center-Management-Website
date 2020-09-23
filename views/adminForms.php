@@ -56,7 +56,6 @@
 			<td>
 			    <ul>
 			    	<li><a href="adminAddForms.php"><font color='red'>Add Forms</font></a></li>
-			    	<li><a href="adminViewAllForms.php"><font color='red'>View All Froms</font></a></li>
 			    	<li><a href="adminHome.php"><font color='red'>Back</font></a></li>
 			    </ul>
 			</td>

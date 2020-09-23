@@ -1,6 +1,21 @@
 <?php
 	require_once('../db/db.php');
 
+	function checkid($userid)
+	{
+		$conn = dbConnection();
+
+		if(!$conn){
+			echo "DB connection error";
+		}
+
+		$sql = "select * from user where userid='{$userid}'";
+		$result = mysqli_query($conn, $sql);
+		$user = mysqli_fetch_assoc($result);
+
+		return $user;
+	}
+
 	function validate($user){
 		$conn = dbConnection();
 

@@ -18,7 +18,7 @@
 
 <!DOCKTYPE html>
 <head>
-	<title>user manage</title>
+	<title>course manage</title>
 	<link rel="stylesheet" type="text/css" href="../assets/css/adminStyle.css">
 </head>
 
